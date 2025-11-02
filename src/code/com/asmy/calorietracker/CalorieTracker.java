@@ -6,11 +6,14 @@ import java.util.Scanner;
  * Handles the main logic and user interaction for the Daily Calorie Tracker.
  * Connects User, Meal, and DaySummary classes through console-based input and output.
  *
+ * This class acts as the central controller for the application.
+ *
  * @author Abdullah Asmy
- * @version 1.0
+ * @version 1.1
  */
 public class CalorieTracker
 {
+
     private final Scanner scanner;
     private final DaySummary daySummary;
 
@@ -31,9 +34,9 @@ public class CalorieTracker
         System.out.println("Welcome to the Daily Calorie Tracker!");
 
         User user;
-        int numberOfMeals;
-
         user = createUser();
+
+        int numberOfMeals;
         numberOfMeals = promptForMealCount();
 
         for (int i = 0; i < numberOfMeals; i++)
@@ -54,18 +57,18 @@ public class CalorieTracker
      */
     private User createUser()
     {
-        System.out.print("Enter your name: ");
-
         String name;
         int limit;
         User user;
 
+        System.out.print("Enter your name: ");
         name = scanner.nextLine();
-        limit = scanner.nextInt();
-        user = new User(name, limit);
 
         System.out.print("Enter your daily calorie limit: ");
+        limit = scanner.nextInt();
+
         scanner.nextLine();
+        user = new User(name, limit);
 
         return user;
     }
@@ -83,6 +86,7 @@ public class CalorieTracker
         count = scanner.nextInt();
 
         scanner.nextLine();
+
         return count;
     }
 
@@ -94,18 +98,20 @@ public class CalorieTracker
      */
     private Meal createMeal(final int mealNumber)
     {
-        System.out.printf("Meal #%d name: ", mealNumber);
-
         String mealName;
         int calories;
         Meal meal;
 
+        System.out.printf("Meal #%d name: ", mealNumber);
         mealName = scanner.nextLine();
-        calories = scanner.nextInt();
-        meal = new Meal(mealName, calories);
+
 
         System.out.printf("Calorie count for '%s': ", mealName);
+        calories = scanner.nextInt();
+
         scanner.nextLine();
+
+        meal = new Meal(mealName, calories);
 
         return meal;
     }
