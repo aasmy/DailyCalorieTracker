@@ -9,6 +9,8 @@ package com.asmy.calorietracker;
  */
 public class Meal
 {
+    private static final int MIN_CALORIES = 1;
+
     private final String mealName;
     private final int calories;
 
@@ -51,7 +53,7 @@ public class Meal
      */
     private static void validateCalories(final int calories)
     {
-        if (calories <= 0)
+        if (calories < MIN_CALORIES)
         {
             throw new IllegalArgumentException("Calories must be greater than zero.");
         }
