@@ -17,7 +17,7 @@ The project demonstrates OOP best practices such as encapsulation, validation, a
 ---
 
 ## Project Structure
-``` bash 
+``` text 
 DailyCalorieTracker/
 │
 ├── src/
@@ -42,6 +42,36 @@ DailyCalorieTracker/
 4. For each meal, the program asks for its name and calorie count.
 5. A summary is displayed with total, average, and remaining calories.
 
+---
+
+## Example Output
+``` text
+Welcome to the Daily Calorie Tracker!
+Enter your name: Abdullah Asmy
+Enter your daily calorie limit: 2200
+How many meals do you want to log today? 3
+Meal #1 name: Oatmeal
+Calorie count for 'Oatmeal': 450
+Meal #2 name: Sandwich
+Calorie count for 'Sandwich': 650
+Meal #3 name: Veggies
+Calorie count for 'Veggies': 700
+
+All meals recorded successfully!
+
+--- Daily Analysis ---
+You can still consume 400 kcal.
+
+--- Meal Summary ---
+Meal Name       Calories
+-----------------------------
+Oatmeal         450 kcal
+Sandwich        650 kcal
+Veggies         700 kcal
+-----------------------------
+Total: 1800 kcal
+Average: 600.00 kcal
+```
 ---
 
 ## How to Run
